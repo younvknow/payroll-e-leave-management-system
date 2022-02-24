@@ -1,0 +1,62 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 24, 2022 at 10:12 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `myown_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `otp_check`
+--
+
+CREATE TABLE `otp_check` (
+  `otp` int(10) NOT NULL,
+  `expired` int(10) NOT NULL,
+  `create_date` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `otp_check`
+--
+
+INSERT INTO `otp_check` (`otp`, `expired`, `create_date`) VALUES
+(721290, 1, '2022-02-12 07:50:49.000000'),
+(494533, 1, '2022-02-12 07:57:56.000000'),
+(146006, 1, '2022-02-12 15:11:34.000000'),
+(226927, 1, '2022-02-12 15:39:45.000000'),
+(531847, 0, '2022-02-12 15:53:17.000000'),
+(956663, 0, '2022-02-13 08:25:39.000000'),
+(809038, 1, '2022-02-13 08:54:52.000000'),
+(925492, 1, '2022-02-13 08:57:08.000000'),
+(329923, 1, '2022-02-14 13:57:23.000000'),
+(724138, 1, '2022-02-19 10:50:12.000000'),
+(519673, 0, '2022-02-19 10:58:53.000000'),
+(592572, 0, '2022-02-20 06:06:18.000000'),
+(252723, 1, '2022-02-20 06:07:02.000000'),
+(715038, 1, '2022-02-20 06:09:56.000000'),
+(483749, 1, '2022-02-20 06:16:44.000000'),
+(529956, 1, '2022-02-20 06:17:23.000000'),
+(678917, 0, '2022-02-20 06:26:59.000000');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
