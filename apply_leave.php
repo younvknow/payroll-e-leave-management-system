@@ -30,8 +30,29 @@ include 'database_connection.php';
         ?>    
         <li><a href="eleave.php">Back</a></li>
     </ul>
+    
+    </br><fieldset>
+    <legend><b>Remaining Leaves</b></legend>
+    <?php
+    $sql_query = "SELECT * FROM applyleave WHERE username = '" . $_SESSION["username"] . "'";
+    $result = $db_connection->query($sql_query);
+    if ($row = $result->fetch_assoc()) {
+        echo 'Annual Leave: ' . $row["annual"] ;
+        echo '<br>';
+        echo 'Sick Leave: ' . $row["sick"] ;
+        echo '<br>';
+        echo 'Childcare Leave: ' . $row["childcare"] ;
+        echo '<br>';
+        echo 'Unpaid Leave: ' . $row["unpaid"] ;
+        echo '<br>';
+        echo 'Reservist Leave: ' . $row["reservist"] ;
+        echo '<br>';
+    }
+    ?>  
+    
+    </fieldset>
     <form action ="apply_leave_action.php" method="post" onsubmit="return check_form();">
-        <fieldset>
+    </br><fieldset>
             <legend><b>Apply Leave</legend></b>
             <label>Date of Leave:</label></br>
             <input type="date" name="datefrom" id="datefrom"> <?php echo 'To' ?> <input type="date" name="dateto" id="dateto"></br></br>
@@ -60,7 +81,8 @@ include 'database_connection.php';
             <label>Select image to upload:</label></br></br>
             <input type="file" name="file" id="file"></br></br>
             <input type="submit" value="Upload Image" name="submit">
+        </fieldset>
     </form>
-        
+    
 </body>
 </html>
