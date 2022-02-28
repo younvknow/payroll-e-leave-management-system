@@ -46,7 +46,7 @@ include 'database_connection.php';
             echo '<br>';
             echo 'CPF Deduction : ' . '$' . ($percentage / 100) * $row['salary']; 
             echo '<br>';
-            echo 'Salary Credited to Account : ' . '$' . $row['salary'] - ($percentage / 100) * $row['salary'] + $allowance;
+            echo 'Salary Credited to Account : ' . '$' . ((int)$row['salary'] - ($percentage / 100) * $row['salary'] + $allowance);
         
         }
         ?>
